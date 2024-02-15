@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import ButtonFollow from "./etc/ButtonFollow";
@@ -21,7 +21,14 @@ const ViewSideBar = () => {
     <div className=" px-3 py-4 ml-10 mr-10 w-80 flex-shrink-0 ">
       <div className="avatar online">
         <div className="w-48 rounded-full">
-          <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          {/* <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+           */}
+          <Image
+            src="/images/foto.webp"
+            width={200}
+            height={200}
+            alt="Picture of the author"
+          />
         </div>
       </div>
       <div className="mt-5 mb-5">

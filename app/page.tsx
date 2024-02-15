@@ -20,8 +20,8 @@ export default async function Home() {
             <div
               className="hero h-52 rounded-2xl overflow-hidden"
               style={{
-                backgroundImage:
-                  "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
+                backgroundPositionY: "bottom 90px",
+                backgroundImage: "url(/images/bg.webp)",
                 backgroundSize: "cover",
                 // height: "80px",
               }}
@@ -77,7 +77,12 @@ export default async function Home() {
                   <div className="flex items-center">
                     <div className="avatar ml-3 mr-3 flex-shrink-0">
                       <div className="w-32 rounded-full">
-                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <Image
+                          src="/images/foto.webp"
+                          width={200}
+                          height={200}
+                          alt="Picture of the author"
+                        />
                       </div>
                     </div>
 
