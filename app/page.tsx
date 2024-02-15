@@ -6,7 +6,11 @@ import ButtonFollow from "./components/etc/ButtonFollow";
 import Content from "./components/Content";
 import Card from "./components/Card";
 import Blog from "./components/Blog";
-export default function Home() {
+
+// import Header from "./components/Header";
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
   return (
     <>
       <div className="flex flex-col min-h-screen">

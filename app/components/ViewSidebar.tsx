@@ -1,8 +1,22 @@
+"use client";
+
 import Link from "next/link";
+import React, { useState, useEffect } from "react";
 import ButtonFollow from "./etc/ButtonFollow";
 import Stats from "./etc/Stats";
+import { UserAuth } from "../context/Auth";
 
 const ViewSideBar = () => {
+  const { user } = UserAuth();
+  const [, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 50));
+      setLoading(false);
+    };
+    checkAuthentication();
+  }, [user]);
   return (
     <div className=" px-3 py-4 ml-10 mr-10 w-80 flex-shrink-0 ">
       <div className="avatar online">
@@ -19,11 +33,12 @@ const ViewSideBar = () => {
       <div className="mt-5"></div>
 
       <Stats />
-      <ul className="menu w-56 rounded-box mt-3">
-        <li>
-          {/* Menambahkan link menggunakan Link dari Next.js */}
-          <Link href="/albums">Album</Link>
-        </li>
+      <ul className="menu w-56 rounded-box mt-3 ">
+        {user && (
+          <li className=" cursor-pointer">
+            <Link href="/albums">Albums</Link>
+          </li>
+        )}
         <li>
           <a>Archive</a>
         </li>
